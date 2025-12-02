@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>شيفرة كود - الرئيسية</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="brand">
+        <img src="assets/logo.png" alt="logo" class="logo-img">
+        <h1 class="site-title">شيفرة كود</h1>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="courses.html">الدورات</a>
+        <a href="portfolio.html">عرض الأعمال</a>
+        <a href="contact.html">تواصل</a>
+        <a class="cta" href="#" onclick="openBooking('c1')">احجز دورة</a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-wrapper">
+      <div class="hero">
+        <div class="hero-card">
+          <h2>فرصتك تبدأ من هنا 🚀</h2>
+          <p>التدريب الميداني لطلبة الجامعات مقدم من مركز شيفرة للتدريب والتطوير. اكسب خبرة عملية ومشاريع حقيقية لبناء معرض أعمال قوي.</p>
+          <button class="btn" onclick="openBooking('c1')">سجّل الآن</button>
+        </div>
+      <div class="hero-full-left">
+     <img src="assets/hero-banner.jpg" alt="Code Center Banner">
+    </div>
+      </div>
+    </section>
+
+    <!-- الدورات (مقتطف) -->
+    <h3 class="section-title">الدورات المتاحة</h3>
+    <div id="coursesList" class="cards"></div>
+
+    <!-- معرض مختصر لأعمال المتدربين (صورتين فقط) -->
+    <h3 class="section-title">معرض مختصر لأعمال المتدربين</h3>
+
+    <div class="grid-portfolio">
+      <img src="assets/mini1.jpg" alt="عمل متدرب 1" onclick="openImage('assets/mini1.jpg')">
+      <img src="assets/mini2.jpg" alt="عمل متدرب 2" onclick="openImage('assets/mini2.jpg')">
+    </div>
+
+    <footer class="footer">
+      <div>© 2025 شيفرة كود</div>
+      <div>Instagram: <a href="#" style="color:inherit">@code_center</a> • واتساب: +972592323418</div>
+    </footer>
+  </div>
+
+  <!-- Booking Modal -->
+  <div id="bookingModal" class="modal-backdrop" style="display:none">
+    <div class="modal">
+      <h3>نموذج حجز دورة</h3>
+      <form id="bookingForm" onsubmit="submitBooking(event)">
+        <div class="form-group"><label>الاسم</label><input id="book-name" required></div>
+        <div class="form-group"><label>رقم الجوال</label><input id="book-phone" required></div>
+        <div class="form-group"><label>البريد</label><input id="book-email" type="email"></div>
+        <div class="form-group"><label>اختر الدورة</label><select id="book-course"></select></div>
+        <div style="display:flex;gap:8px;justify-content:flex-end">
+          <button type="button" class="btn" onclick="closeBooking()">إلغاء</button>
+          <button class="btn" type="submit">إرسال الحجز</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="imgModal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button id="imgModalClose" aria-label="إغلاق">إغلاق ✕</button>
+      <img id="imgModalImg" src="" alt="عرض الصورة" style="width:100%;border-radius:8px;display:block">
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

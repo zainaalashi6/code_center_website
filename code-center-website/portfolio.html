@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>عرض الأعمال - شيفرة كود</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- NAV -->
+    <nav class="nav" role="navigation" aria-label="القائمة الرئيسية">
+      <div class="brand">
+        <img src="assets/logo.png" class="logo-img" alt="شعار شيفرة كود">
+        <h1 class="site-title">شيفرة كود</h1>
+      </div>
+
+      <div class="nav-links" role="menubar">
+        <a role="menuitem" href="index.html">الرئيسية</a>
+        <a role="menuitem" href="courses.html">الدورات</a>
+        <a role="menuitem" class="active" href="portfolio.html">عرض الأعمال</a>
+        <a role="menuitem" href="contact.html">تواصل</a>
+        <a class="cta" href="#" onclick="openBooking('c1')">احجز دورة</a>
+      </div>
+    </nav>
+
+    <h3 class="section-title">معرض الأعمال</h3>
+
+  <div class="grid-portfolio" aria-live="polite">
+
+    <figure>
+        <img src="assets/work1.jpg"
+             alt="عمل 1 - مشروع تدريبي"
+             loading="lazy"
+             onclick="openImage('assets/work1.jpg')">
+    </figure>
+
+    <figure>
+        <img src="assets/work2.jpg"
+             alt="عمل 2 - مشروع تدريبي"
+             loading="lazy"
+             onclick="openImage('assets/work2.jpg')">
+    </figure>
+
+    <figure>
+        <img src="assets/work3.jpg"
+             alt="عمل 3 - مشروع تدريبي"
+             loading="lazy"
+             onclick="openImage('assets/work3.jpg')">
+    </figure>
+
+    <figure>
+        <img src="assets/work4.jpg"
+             alt="عمل 4 - مشروع تدريبي"
+             loading="lazy"
+             onclick="openImage('assets/work4.jpg')">
+    </figure>
+
+    <figure>
+        <img src="assets/work5.jpg"
+             alt="عمل 5 - مشروع تدريبي"
+             loading="lazy"
+             onclick="openImage('assets/work5.jpg')">
+    </figure>
+
+    <figure>
+        <img src="assets/work6.jpg"
+             alt="عمل 6 - مشروع تدريبي"
+             loading="lazy"
+             onclick="openImage('assets/work6.jpg')">
+    </figure>
+
+</div>
+
+
+    <footer class="footer">
+      <div>© 2025 شيفرة كود</div>
+      <div>Instagram: <a href="#" style="color:inherit">@code_center</a></div>
+    </footer>
+  </div>
+
+  <!-- Image Modal (يوجد مرة واحدة في الصفحة) -->
+  <div id="imgModal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-label="عرض الصورة">
+    <div class="modal" role="document">
+      <button id="imgModalClose" aria-label="إغلاق نافذة العرض">إغلاق ✕</button>
+      <img id="imgModalImg" src="" alt="صورة مكبرة" style="width:100%;border-radius:8px;display:block">
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script>
+  
+    (function(){
+     
+      if(typeof openImage !== 'function' || typeof closeImage !== 'function'){
+        window.openImage = function(src){
+          const modal = document.getElementById('imgModal');
+          const img = document.getElementById('imgModalImg');
+          if(!modal || !img) return;
+          img.src = src;
+          modal.classList.add('show');
+          modal.setAttribute('aria-hidden','false');
+          document.body.style.overflow = 'hidden';
+        };
+        window.closeImage = function(){
+          const modal = document.getElementById('imgModal');
+          if(!modal) return;
+          modal.classList.remove('show');
+          modal.setAttribute('aria-hidden','true');
+          document.body.style.overflow = '';
+          document.getElementById('imgModalImg').src = '';
+        };
+      }
+
+      document.addEventListener('DOMContentLoaded', function(){
+        const closeBtn = document.getElementById('imgModalClose');
+        if(closeBtn) closeBtn.addEventListener('click', closeImage);
+        const backdrop = document.getElementById('imgModal');
+        if(backdrop) backdrop.addEventListener('click', function(e){
+          if(e.target === backdrop) closeImage();
+        });
+        document.addEventListener('keydown', function(e){
+          if(e.key === 'Escape') closeImage();
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

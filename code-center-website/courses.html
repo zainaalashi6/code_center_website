@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>الدورات - شيفرة كود</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- NAV -->
+        <nav class="nav">
+            <div class="brand">
+                <img src="assets/logo.png" class="logo-img">
+                <h1 class="site-title">شيفرة كود</h1>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="courses.html" class="active">الدورات</a>
+                <a href="portfolio.html">عرض الأعمال</a>
+                <a href="contact.html">تواصل</a>
+                <a class="cta" href="#" onclick="openBooking('c1')">احجز دورة</a>
+            </div>
+        </nav>
+
+        <!-- عنوان الصفحة -->
+        <h2 style="margin-top:28px">قائمة الدورات</h2>
+
+        <!-- عرض الدورات -->
+        <div id="coursesList" class="cards"></div>
+
+        <!-- عرض الحجوزات -->
+        <h3 class="section-title" style="margin-top:36px">الحجوزات (محلياً)</h3>
+
+        <div id="bookingsList" style="padding:12px; color:var(--muted)"></div>
+
+        <!-- الفوتر -->
+        <footer class="footer" style="margin-top:36px">
+            <div>© 2025 شيفرة كود</div>
+            <div>Instagram:
+                <a href="#" style="color:inherit">@code_center</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- بوكينغ مودال -->
+    <div id="bookingModal" class="modal-backdrop" style="display:none">
+
+        <div class="modal">
+            <h3>نموذج حجز دورة</h3>
+
+            <form id="bookingForm" onsubmit="submitBooking(event)">
+
+                <div class="form-group">
+                    <label>الاسم</label>
+                    <input id="book-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>رقم الجوال</label>
+                    <input id="book-phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label>البريد</label>
+                    <input id="book-email" type="email">
+                </div>
+
+                <div class="form-group">
+                    <label>اختر الدورة</label>
+                    <select id="book-course"></select>
+                </div>
+
+                <div style="display:flex; gap:8px; justify-content:flex-end; margin-top:10px">
+                    <button type="button" class="btn" onclick="closeBooking()">إلغاء</button>
+                    <button class="btn" type="submit">إرسال الحجز</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

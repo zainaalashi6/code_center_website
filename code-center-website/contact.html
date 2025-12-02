@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>تواصل - شيفرة كود</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="brand">
+                <img src="assets/logo.png" class="logo-img">
+                <h1 class="site-title">شيفرة كود</h1>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="courses.html">الدورات</a>
+                <a href="portfolio.html">عرض الأعمال</a>
+                <a href="contact.html" class="active">تواصل</a>
+                <a class="cta" href="#" onclick="openBooking('c1')">احجز دورة</a>
+            </div>
+        </nav>
+
+        <!-- عنوان الصفحة -->
+        <h3 class="section-title">تواصل معنا</h3>
+
+        <!-- نموذج التواصل -->
+        <form id="contactForm" onsubmit="submitContact(event)">
+
+            <div class="form-group">
+                <label>الاسم</label>
+                <input required>
+            </div>
+
+            <div class="form-group">
+                <label>البريد</label>
+                <input type="email">
+            </div>
+
+            <div class="form-group">
+                <label>اختر الدورة (اختياري)</label>
+                <select id="contact-course"></select>
+            </div>
+
+            <div class="form-group">
+                <label>الرسالة</label>
+                <textarea required></textarea>
+            </div>
+
+            <div style="display:flex; justify-content:flex-end; margin-top:10px">
+                <button class="btn" type="submit">إرسال</button>
+            </div>
+        </form>
+
+        <!-- روابط السوشيال -->
+        <h3 class="section-title">روابطنا</h3>
+
+        <p>Instagram:
+            <a href="#" style="color:inherit">@code_center</a>
+        </p>
+
+        <p>واتساب: +972592323418</p>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div>© 2025 شيفرة كود</div>
+            <div>شيفرة للتدريب والتطوير</div>
+        </footer>
+
+    </div>
+
+    <!-- جافاسكربت -->
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
